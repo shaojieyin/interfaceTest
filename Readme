@@ -1,0 +1,7 @@
+1.类初始化需要添加标签
+@classmethod
+def setUpClass(cls):类的初始化
+2.跳过不需要执行的Case
+@unittest.skip("跳过test3")跳过某个case
+3.日志
+unittest.main(verbosity=2)verbosity=2表示日志级别  1，2，3
