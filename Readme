@@ -5,3 +5,23 @@ def setUpClass(cls):类的初始化
 @unittest.skip("跳过test3")跳过某个case
 3.日志
 unittest.main(verbosity=2)verbosity=2表示日志级别  1，2，3
+4.修改顺序
+suite = unittest.TestSuite()
+    suite.addTest(TestClass("testCase3"))
+    suite.addTest(TestClass("testCase2"))
+    suite.addTest(TestClass("testCase1"))
+    runner = unittest.TextTestRunner(verbosity=2)
+    runner.run(suite)
+5.指定目录下的全部Case
+def load_all_case():
+    #获取项目路径
+    print(os.getcwd())
+    #拼接用例路径（这里是TestCase）路径
+    case_path = os.path.join(os.getcwd(),"TestCase")
+    print(case_path)
+    #加载路径下所有Case
+    discover = unittest.defaultTestLoader.discover(case_path,pattern='*Case.py',top_level_dir=None)
+    print(discover)
+    return discover
+6.json格式化输出数据
+print(json.dumps(req, ensure_ascii=False, indent=2))

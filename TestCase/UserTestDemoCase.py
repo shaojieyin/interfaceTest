@@ -15,5 +15,3 @@ class UserTestDemo(unittest.TestCase):
         print("方法UserTestCase3 test case3")
     def testCase4(self):
         print("方法UserTestCase4 test case4")
-if __name__ == '__main__':
-    unittest.TestCase()
